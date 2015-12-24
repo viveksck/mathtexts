@@ -1,0 +1,38 @@
+http://linguatools.org/tools/corpora/wikipedia-monolingual-corpora/
+first 2 million lines
+
+Dependency type		Save
+
+dep                 yes
+mod                 yes
+prede-el            yes
+prede               yes
+phdep               yes
+compar              yes
+elst                yes
+cj                  yes
+spec                yes
+enum                yes
+coord-elst          yes
+undef               no
+theme               no
+subj                yes
+coord               yes
+amod                yes    
+ex                  no
+analyt              yes
+preds               yes
+comp                yes
+circ-elst           yes
+preds-el            yes
+compar-elst         yes
+appo                yes
+punct               no
+pred                yes
+circ                yes
+pcomp               yes
+aux                 yes
+lexmod              no
+obj                 yes
+pred-el             yes
+
