@@ -1,0 +1,71 @@
+\documentclass[oneside,senior,etd]{BYUPhys}
+
+\usepackage[utf8]{inputenc}
+\usepackage{rotating} 
+
+\usepackage[russian]{babel}
+\usepackage{amsfonts} % Пакеты для математических символов и теорем
+\usepackage{amstext}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{graphicx} % Пакеты для вставки графики
+\usepackage{subfig}
+\usepackage{color}
+\usepackage[unicode]{hyperref}
+\usepackage[nottoc]{tocbibind} % Для того, чтобы список литературы отображался в оглавлении
+\usepackage{algorithmic} % Для записи алгоритмов в псевдокоде
+\usepackage{algorithm}
+\usepackage{verbatim} % Для вставок заранее подготовленного текста в режиме as-is
+
+\Chair{Кафедра Системного Программирования}
+\Lab{~}
+\Year{2015}
+  \Month{Месяц}
+  \City{Москва}
+  \AuthorText{Автор}
+  \Author{Архипенко Константин Владимирович}
+  \AuthorEng{Konstantin Arkhipenko}
+  \AcadGroup{427}
+
+  \TitleTop{Модель векторного представления слов на основе}
+  %\TitleMiddle{определения синонимов в комментариях}
+  \TitleBottom{деревьев зависимостей предложений} % leave empty if you don't need it
+  \TitleTopEng{Thesis theme, first line}
+  %\TitleMiddleEng{Thesis theme, second line}
+  \TitleBottomEng{Thesis theme, third line} % leave empty if you don't need it
+  
+ \docname{Отчёт по заданию}
+  %\Advisor{Турдаков Денис Юрьевич}
+  %\AdvisorDegree{канд. физ.-мат. наук\\}
+
+%\Abstract{Текст аннотации на русском}
+%\AbstractEng{Abstract in english}
+
+
+%%%% DON'T change this. It is here because .sty does not support cyrillic cp properly %%%%
+\University{Московский Государственный Университет имени М.В.Ломоносова}
+\Faculty{Факультет Вычислительной Математики и Кибернетики}
+\GrText{студент гр.}
+%\AdvisorText{Научный руководитель}
+%\AbstractText{Аннотация}
+
+\begin{document}
+\fixmargins
+ \makepreliminarypages
+
+\oneandhalfspace
+
+\tableofcontents
+
+\include{Chapter1} % Введение
+\include{Chapter2} % Постановка задачи
+\include{Chapter3} % Обзор существующих решений
+\include{Chapter4} % Исследование и построение решения задачи
+\include{Chapter5} % Описание практической части
+%\include{Chapter6} % Заключение
+
+\nocite{*}
+\bibliographystyle{gost71u} % Для соответствия требованиям об оформлении списка литературы
+\bibliography{references}
+
+\end{document}

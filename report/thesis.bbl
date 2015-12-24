@@ -1,0 +1,51 @@
+\begin{thebibliography}{1}
+\def\selectlanguageifdefined#1{
+\expandafter\ifx\csname date#1\endcsname\relax
+\else\language\csname l@#1\endcsname\fi}
+\ifx\undefined\url\def\url#1{{\small #1}}\else\fi
+\ifx\undefined\BibUrl\def\BibUrl#1{\url{#1}}\else\fi
+\ifx\undefined\BibAnnote\long\def\BibAnnote#1{}\else\fi
+\ifx\undefined\BibEmph\def\BibEmph#1{\emph{#1}}\else\fi
+
+\bibitem{levy1}
+\selectlanguageifdefined{english}
+\BibEmph{Levy~O., Goldberg~Y.} Dependency-based word embeddings. "---
+\newblock 2014.
+
+\bibitem{mikolov1}
+\selectlanguageifdefined{english}
+Efficient estimation of word representations in vector space~/ T.~Mikolov,
+  K.~Chen, G.~Corrado, J.~Dean. "---
+\newblock 2013.
+
+\bibitem{bengio}
+\selectlanguageifdefined{english}
+A neural probabilistic language model~/ Y.~Bengio, R.~Ducharme, P.~Vincent,
+  C.~Jauvin. "---
+\newblock 2003.
+
+\bibitem{mikolov2}
+\selectlanguageifdefined{english}
+Distributed representations of words and phrases and their compositionality~/
+  T.~Mikolov, I.~Sutskever, K.~Chen et~al. "---
+\newblock 2013.
+
+\bibitem{negative}
+\selectlanguageifdefined{english}
+\BibEmph{Levy~O., Goldberg~Y.} word2vec explained: Deriving {M}ikolov et
+  al.’s negative-sampling word-embedding method. "---
+\newblock 2014.
+
+\bibitem{mikolov3}
+\selectlanguageifdefined{english}
+\BibEmph{Mikolov~T., tau Yih~W., Zweig~G.} Linguistic regularities in
+  continuous space word representations. "---
+\newblock 2013.
+
+\bibitem{format}
+\selectlanguageifdefined{english}
+\BibEmph{Buchholz~S., Marsi~E.} {CoNLL-X} shared task on multilingual
+  dependency parsing. "---
+\newblock 2006.
+
+\end{thebibliography}

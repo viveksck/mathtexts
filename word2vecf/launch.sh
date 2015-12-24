@@ -1,0 +1,24 @@
+INPUT=../sentences
+TMPWORDVOCAB=../tmpwordvocab
+PAIRS=../pairs
+WORDVOCAB=../wordvocab
+CONTEXTVOCAB=../contextvocab
+WORDVECTORS=../wordvectors
+CONTEXTVECTORS=../contextvectors
+
+MINCOUNT=25
+VECTORDIM=300
+NEGATIVESAMPLES=25
+THREADS=16
+SAMPLE=0
+LEARNINGRATE=0.025
+EPOCHS=5
+CLUSTERS=0
+BINARYMODE=0
+
+cut -f 2 $INPUT | ./cxx/vocab $MINCOUNT > $TMPWORDVOCAB
+cat $INPUT | ./cxx/extract_deps $TMPWORDVOCAB $MINCOUNT > $PAIRS
+rm $TMPWORDVOCAB
+./count_and_filter -train $PAIRS -wvocab $WORDVOCAB -cvocab $CONTEXTVOCAB -min-count 1
+./word2vecf -train $PAIRS -output $WORDVECTORS -size $VECTORDIM -negative $NEGATIVESAMPLES -threads $THREADS -sample $SAMPLE -alpha $LEARNINGRATE -iters $EPOCHS -classes $CLUSTERS -binary $BINARYMODE -dumpcv $CONTEXTVECTORS -wvocab $WORDVOCAB -cvocab $CONTEXTVOCAB
+rm $PAIRS $WORDVOCAB $CONTEXTVOCAB
