@@ -5,7 +5,6 @@ A level-1 auxiliary file: Chapter1.aux
 A level-1 auxiliary file: Chapter2.aux
 A level-1 auxiliary file: Chapter3.aux
 A level-1 auxiliary file: Chapter4.aux
-A level-1 auxiliary file: Chapter5.aux
 The style file: gost71u.bst
 Database file #1: references.bib
 Warning--empty booktitle in levy1
@@ -17,7 +16,7 @@ Warning--empty booktitle in mikolov3
 Warning--empty booktitle in format
 You've used 7 entries,
             2815 wiz_defined-function locations,
-            677 strings with 6190 characters,
+            676 strings with 6178 characters,
 and the built_in function-call counts, 1836 in all, are:
 = -- 188
 > -- 91

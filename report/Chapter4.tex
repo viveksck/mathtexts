@@ -1,3 +1,40 @@
 \section{Практическая часть}
 \label{sec:Chapter4} \index{Chapter4}
 
+Исходный код используемых в данной работе инструментов находится в репозитории github\footnote{\url{https://github.com/arkhipenko-ispras/mathtexts/}}.
+
+\subsection{Модификация \texttt{RussianDependencyParser}}
+
+В \texttt{RussianDependencyParser} добавлена возможность работы с файлом, содержащим большое число предложений.
+
+Изменения касаются файлов \texttt{generateSentence.py} и \texttt{launch.sh}.
+
+\subsection{Реализация вспомогательных программ на языке C++}
+
+Инструмент \texttt{word2vecf} содержит два вспомогательных скрипта на языке Python 2:
+\begin{itemize}
+	\item
+	\texttt{scripts/vocab.py} -- построение на основе корпуса зависимостей словаря, состоящего из всех различных слов, встретившихся в корпусе не менее \(threshold\) раз;
+	\item
+	\texttt{scripts/extract\char`_deps.py} -- построение на основе корпуса зависимостей и словаря, генерируемого предыдущим скриптом, обучающего корпуса пар.
+\end{itemize}
+
+Данные вспомогательные программы были переписаны на языке C++ с некоторыми улучшениями:
+\begin{itemize}
+	\item
+	возможность полноценной работы с Unicode: скрипт \texttt{scripts/extract\char`_deps.py} не производит перевод русских букв в нижний регистр, во вспомогательных программах \texttt{cxx/vocab.cpp} и \texttt{cxx/extract\char`_deps.cpp} перевод осуществляется;
+	\item
+	удаление пар с некоторыми нежелательными типами зависимостей: \texttt{undef}, \texttt{theme}, \texttt{ex}, \texttt{punct} и \texttt{lexmod} (и обратными к ним). Реализовано в \texttt{cxx/extract\char`_deps.cpp};
+	\item
+	удаление пар, где хотя бы одно из слов содержит символы, отличные от букв, цифр, знака подчёркивания и дефиса, реализовано в \texttt{cxx/extract\char`_deps.cpp}.
+\end{itemize}
+
+\subsection{Адаптация \texttt{word2vecf} к \texttt{RussianDependencyParser}}
+
+Вспомогательные программы \texttt{cxx/vocab.cpp} и \texttt{cxx/extract\char`_deps.cpp} работают с корпусом зависимостей, генерируемым \texttt{RussianDependencyParser}.
+
+Формат этого корпуса отличается от CoNLL-X отсутствием последних двух столбцов.
+
+\subsection{Реализация скрипта для запуска \texttt{word2vecf}}
+
+Как часть инструмента \texttt{word2vecf} реализован скрипт командной строки \texttt{launch.sh} для запуска обучения на основе корпуса зависимостей. Автоматически при помощи вспомогательных программ на языке C++ генерируется обучающий корпус пар. Также можно настроить параметры обучения \texttt{word2vecf}, отредактировав скрипт.
